@@ -3,7 +3,6 @@ let NumeroSecreto = 0;
 let intentos = 0;
 let listaNumerosSorteados = [];
 let numeroMaximo = 20;
-console.log(NumeroSecreto);
 
 //Función llamada de html, definimos {}encapsular acción
 function asignarTextoElemento(elemento, texto){
@@ -13,7 +12,6 @@ elementoHTML.innerHTML = texto;
 function verificarIntento(){
   let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
  
- // console.log(NumeroSecreto);
   if (numeroDeUsuario === NumeroSecreto){
     asignarTextoElemento('p',`¡Felicidades! Acertaste el número en ${intentos} ${(intentos === 1) ? 'intento' : 'intentos'}`);
     document.getElementById('reiniciar').removeAttribute('disabled');
@@ -38,9 +36,7 @@ function limpiarCaja() {
 
 function generarNumeroSecreto(){
     let numeroGenerado = Math.floor(Math.random()*numeroMaximo)+1;
-    console.log(numeroGenerado);
-    console.log(listaNumerosSorteados);
-
+   
     // si ya sorteamos todos los numero
     if (listaNumerosSorteados.length == numeroMaximo) {
         asignarTextoElemento ('p', 'Todos los números posibles han sido sorteados');
